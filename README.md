@@ -62,6 +62,7 @@ Ibus 自帶 (位於 /usr/share/rime-data/)
 以上步驟有任何問題請重新登入系統
 
 二. ibus安裝
+
 0x01. 輪入法基於ibus-rime(中州韻), 如果系統未安裝, 請先下載安裝ibus-rime
 
 	Ubuntu Studio: 
@@ -113,14 +114,12 @@ Ibus 自帶 (位於 /usr/share/rime-data/)
 
 三. 鍵盤説明
 
-一		丨
-QWERT YUIOP
-
-丶		丿
-ASDFG HJKL
-
-𠃌		*?
-ZXCVB NM
+一		QWERT
+丨		YUIOP
+丶		ASDFG
+丿		HJKL
+𠃌		ZXCVB
+*?		NM
 
 註: NM 目前未處理
 
