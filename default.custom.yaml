@@ -1,0 +1,49 @@
+# Ibus-rime 筆順筆畫輸入法 by: 一善魚(YQ-YSY <YQ-YSY@163.com>) & kwaiching(iloveyoufanhoksin@live.cn)
+# 編碼 utf-8 
+# 使用 UNIX 換行符（LF）
+# 鑑於一些文字編輯器會為 UTF-8 編碼的檔案新增 BOM 標記，為了防止誤將該字元混入文中， 不要從檔案的第一行開始正文，而請在該行行首以 # 記號起一行註釋
+
+patch:
+  menu/page_size: 10                 # 候選字每頁顯示個數，最多10個，在xxx.schema.yaml也有相同設定，在此修改即可
+  translator/enable_user_dict: ture  # 是否開啟使用者詞典和字頻調整，ture/false，在xxx.schema.yaml也有相同設定，在此修改即可
+  translator/enable_sentence: ture   # 是否開啟碼錶輸入法連打，ture/false。
+#  "ascii_composer/switch_key":
+#    Caps_Lock: commit_code
+#    Control_L: inline_ascii
+#    Control_R: noop
+#    Shift_L: commit_code # 左右Shift上屏編碼並切換為英文狀態，inline_ascii 設定在有輸入時不能切換至英文狀態
+#    Shift_R: commit_code #
+# 使用者按需分配快捷鍵。
+# minus/減號，equal/等號，comma/逗號，period/句號，exclam/感嘆號，numbersign/井號，percent/百分號，semicolon/分號，apostrophe/單引號
+#  key_binder/bindings:
+#    - { when: always, accept: Shift+space, toggle: full_shape }
+#    - { when: always, accept: Control+period, toggle: ascii_punct }
+#    - { accept: comma, send: Page_Up, when: paging }
+#    - { accept: period, send: Page_Down, when: has_menu }
+
+  schema_list:  # 按需添加
+  ###筆順筆畫
+    - {schema: cns}               # 五碼筆順(臺灣)
+    - {schema: g6code}            # 六碼筆畫(香港)
+    - {schema: stroke5_cn}        # 五碼筆順(大陸)
+    - {schema: stroke5}           # 五碼筆畫(香港)
+    - {schema: t9}                # T9筆順(大陸)
+    - {schema: one_hand}          # 單手筆順輸入法(原作者字典, 改鍵盤輸入 + 12345)
+
+  ###Ibus 自帶
+    - {schema: luna_pinyin_tw}
+#    - {schema: luna_pinyin_fluency}
+#    - {schema: luna_pinyin}
+#    - {schema: luna_quanpin}
+#    - {schema: luna_pinyin_simp}       # 明月拼音簡體字版
+#    - {schema: luna_pinyin_fluency}
+#    - {schema: bopomofo}
+#    - {schema: bopomofo_tw}
+#    - {schema: cangjie5}               # 倉
+#    - {schema: stroke}                 # 五筆
+#    - {schema: terra_pinyin}           # 地球拼音（帶音調輸入，四聲用符號 -/<\ 或者 ;,/> 置於音節末尾）
+
+# 如果原來的 Ctrl + ` 調出輸入法“方案選單”與軟體的關鍵按鍵衝突，可以修改這裡
+#  "switcher/hotkeys":
+#    - "Control+Alt+F8"
+

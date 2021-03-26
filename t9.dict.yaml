@@ -1,0 +1,14 @@
+# By: kwaiching
+# 编码 utf-8 
+# 使用 UNIX 换行符（LF）
+# 鉴于一些文本编辑器会为 UTF-8 编码的文件添加 BOM 标记，为了防止误将该字符混入文中， 不要从文件的第一行开始正文，而请在该行行首以 # 记号起一行注释
+
+---
+name: t9                    # 字典名称，确保与字典文件前端名称一致
+version: "21.03.26"                    # 版本号
+use_preset_vocabulary: ture       # 是否使用用户预设词汇
+sort: by_weight                   # 字典初始排序，可选original或by_weight，by_weight 意图是不以码表的顺序排列重码字，而是比较字频。
+
+import_tables:
+  - t9.text                 # 单字及标点符号数字序号
+#  - t9_word.core                 # 核心词库 simp
