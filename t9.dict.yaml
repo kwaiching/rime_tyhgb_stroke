@@ -5,7 +5,7 @@
 
 ---
 name: t9                    # 字典名称，确保与字典文件前端名称一致
-version: "21.03.26"                    # 版本号
+version: "21.03.27"                    # 版本号
 use_preset_vocabulary: ture       # 是否使用用户预设词汇
 sort: by_weight                   # 字典初始排序，可选original或by_weight，by_weight 意图是不以码表的顺序排列重码字，而是比较字频。
 

@@ -73,13 +73,13 @@ translator:                # 编码翻译器（注意不要与转译器弄混，
     - "xform/y/丨/"
     - "xform/h/丿/"
     - "xform/g/丶/"
-    - "xform/b/𠃌/"
+    - "xform/b/乛/"
   comment_format:
     - "xform/t/一/"
     - "xform/y/丨/"
     - "xform/h/丿/"
     - "xform/g/丶/"
-    - "xform/b/𠃌/"
+    - "xform/b/乛/"
     
 #  enable_user_dict: false  # 是否开启用户词典（用户词典记录动态字词频、用户词），true/false，在default.custom.yaml文件有相同的设置，不要在此修改。
   strict_spelling: true    # 是否开启脚本拼写运算，限定该拼写不用于输入单字
