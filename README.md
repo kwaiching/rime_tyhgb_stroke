@@ -3,6 +3,7 @@ fcitx + ibus 筆畫輸入法Linux版; 包含五碼, 六碼; 以及臺灣, 大陸
 
 
 一. fcitx 安裝
+
 0x01. 輪入法基於fcitx-rime(中州韻), 如果系統未安裝, 請先下載安裝ibus-rime
 
 	Ubuntu Studio: 
