@@ -87,20 +87,20 @@ Ibus 自帶 (位於 /usr/share/rime-data/)
     - {schema: g6code}            # 六碼筆畫(香港)
     - {schema: stroke5_cn}        # 五碼筆順(大陸)
     - {schema: stroke5}           # 五碼筆畫(香港)
-#    - {schema: t9}                # T9筆順(大陸)
+    - {schema: t9}                # T9筆順(大陸)
     - {schema: one_hand}          # 單手筆順輸入法(原作者字典, 改鍵盤輸入 + 12345)
 
 ###Ibus 自帶 (位於 /usr/share/rime-data/)
     - {schema: luna_pinyin_tw}			# 朙月拼音·臺灣正體
-#    - {schema: luna_pinyin}			# 朙月拼音
-#    - {schema: luna_quanpin}			# 全拚
-#    - {schema: luna_pinyin_simp}       # 朙月拼音簡體字版
-#    - {schema: luna_pinyin_fluency}	# 朙月拼音·臺灣正體
-#    - {schema: bopomofo}				# 註音
-#    - {schema: bopomofo_tw}			# 註音臺灣
-#    - {schema: cangjie5}               # 倉頡五代
-#    - {schema: stroke}                 # 五筆
-#    - {schema: terra_pinyin}           # 地球拼音（帶音調輸入，四聲用符號 -/<\ 或者 ;,/> 置於音節末尾）
+    - {schema: luna_pinyin}			# 朙月拼音
+    - {schema: luna_quanpin}			# 全拚
+    - {schema: luna_pinyin_simp}       # 朙月拼音簡體字版
+    - {schema: luna_pinyin_fluency}	# 朙月拼音·臺灣正體
+    - {schema: bopomofo}				# 註音
+    - {schema: bopomofo_tw}			# 註音臺灣
+    - {schema: cangjie5}               # 倉頡五代
+    - {schema: stroke}                 # 五筆
+    - {schema: terra_pinyin}           # 地球拼音（帶音調輸入，四聲用符號 -/<\ 或者 ;,/> 置於音節末尾）
 
     複製其餘文件至 home/<user>/.config/ibus/rime
 
