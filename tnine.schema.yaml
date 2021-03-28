@@ -1,14 +1,15 @@
-# T9 輸入法
-# https://github.com/microcai/ibus-t9 by microcai
+# Rime schema settings
+# encoding: utf-8
 
-schema:                    # 概要
-  name: "T9筆順(大陸)"          # 方案的显示名称（即出现于方案菜单中显示给用户看的，通常为中文），最好加引号表明是字符串
-  schema_id: t9      # 方案的内部名称，用于在代码中调取或引用此方案，通常由小写英文、数字、下划线组成
-  version: "21.03.27"           # 版本号，在发布新版前请确保已更新此版本号，最好加引号表明是字符串
-  author:                  # 作者、发明人、撰写者。如果您使用别人方案做出了修改，请保留原作者的信息，并将自己的名字加在后面
+schema:
+  schema_id: tnine
+  name: "T9筆畫(香港)"
+  version: "0.8"
+  author:
+    - Cyrus.Yeung <cyrus0880@outlook.com>
     - kwaiching
-  description: |           # 注释，如果本方案依赖于其它方案，请在此说明（通常用于反向查询所依赖的其它方案，或着是说明两种或多种方案在同时使用）
-    使用Rime平台的单手笔顺输入方案。
+  description: |
+    T9/六碼 筆畫t,y,h,g,b 代表橫、豎、撇、捺、折
 
 switches:
   - name: ascii_mode
@@ -50,7 +51,7 @@ engine:                    # 输入引擎设定，即挂接组件的“处方”
 #    - script_translator@second_translator    # ※ （可精细配置）脚本翻译器，用于拼音、粤拼等基于音节表的输入方案，此项可加载多个实例，后接@+翻译器名（如：pinyin、jyutping等）。如果要开启脚本拼写运算，必须开启这个。
 #    - reverse_lookup_translator  # ※ （不常用）反查翻译器，用另一种编码方案查码
   filters:                 # 四、过滤器，这批组件过滤翻译的结果
-    - simplifier           # ※ （可精细配置）繁简转换
+#    - simplifier           # ※ （可精细配置）繁简转换
     - uniquifier           # ※ 过滤重複的候选字，有可能来自simplifier繁简转换
     - cjk_minifier         # ※ 字符集过滤〔用于script_translator，使之支援extended_charset开关〕
     - reverse_lookup_filter  # ※ （可精细配置）反查滤镜，以更灵活的方式反查，Rime1.0后替代reverse_lookup_translator，此项可加载多个实例，后接@+滤镜名（如：pinyin_lookup、jyutping_lookup等）
@@ -60,7 +61,7 @@ engine:                    # 输入引擎设定，即挂接组件的“处方”
 
 translator:                # 编码翻译器（注意不要与转译器弄混，少了一个s）
 # # # 单手笔顺输入法的词典：单字近3万个，核心词汇36万个，扩展词汇（可选）243万个，含精简码、六全码。
-  dictionary: t9     # 调用输入法编码对应的字典，字典名称，确保与字典文件前端名称一致，也要与配置文件前端名称一致。
+  dictionary: tnine     # 调用输入法编码对应的字典，字典名称，确保与字典文件前端名称一致，也要与配置文件前端名称一致。
   preedit_format:
     - "xform/t/一/"
     - "xform/y/丨/"
@@ -104,6 +105,17 @@ key_binder:                # 键盘绑定器
   bindings:                # 键盘绑定，设置功能性快捷键，每一条binding可能包含：accept实际所按之键、send输出效果、toggle切换开关和when作用范围（send和toggle二选一），
                            # when可用字段包含：paging翻页用，has_menu操作候选项用，composing操作输入码用，always全域总是使用。
 # # # 单手笔顺输入法用小键盘的数字键输入数字，即映射为字母大键盘的数字键
+    # - {accept: KP_0, send: 0, when: always}
+    # - {accept: KP_1, send: 1, when: always}
+    # - {accept: KP_2, send: 2, when: always}
+    # - {accept: KP_3, send: 3, when: always}
+    # - {accept: KP_4, send: 4, when: always}
+    # - {accept: KP_5, send: 5, when: always}
+    # - {accept: KP_6, send: 6, when: always}
+    # - {accept: KP_7, send: 7, when: always}
+    # - {accept: KP_8, send: 8, when: always}
+    # - {accept: KP_9, send: 9, when: always}
+
 #小
 #    - {accept: KP_0, send: 0, when: always}
 #    - {accept: KP_1, send: 1, when: always}
@@ -133,12 +145,13 @@ key_binder:                # 键盘绑定器
     - {accept: j, send: h, when: always}
     - {accept: k, send: h, when: always}
     - {accept: l, send: h, when: always}
-
+    
     - {accept: a, send: g, when: always}   # 丶 - 6 4
     - {accept: s, send: g, when: always}
     - {accept: d, send: g, when: always}
     - {accept: f, send: g, when: always}
     - {accept: g, send: g, when: always}
+
 
     - {accept: z, send: b, when: always}   # 𠃌 - 5 0 
     - {accept: x, send: b, when: always}
@@ -149,6 +162,15 @@ key_binder:                # 键盘绑定器
     - {accept: n, send: n, when: always}
     - {accept: m, send: m, when: always}
 
+#### , . 翻頁
+    - when:   paging    # 僅當已發生向後換頁時，
+      accept: comma     # 將「逗號」鍵……
+      send:   Page_Up   # 關聯到「向前換頁」；於是 navigator 將收到一發 Page_Up
+
+    - when:   has_menu  # 只要有候選字即滿足條件
+      accept: period
+      send:   Page_Down
+      
 # # # 单手笔顺输入法用小键盘回车确认输入，即映射为空格键，能让数字编码变汉字上屏，单独输入时仍为回车换行。Windows 10 系统不认 KP_Enter，需要改为 Return。
 #    - {accept: KP_Enter, send: space, when: has_menu}
 # # # 单手笔顺输入法用小键盘的“-”减号键映射为后退删除键，用于修改输入错误，但always也不能修改已打出的汉字（可惜了），单独输入时仍为-号。
@@ -166,6 +188,11 @@ key_binder:                # 键盘绑定器
 #    - {accept: KP_Multiply, send: Return, when: has_menu}
 # # # 原本想使用小键盘“*”乘号（星号）作为模糊查询，匹配字词，这样能大大加快输入的速度，可惜不知道应该如何实现，有兴趣的朋友帮忙研究一下
 
+# # # 单手笔顺输入法用小键盘的“,”加号键映射为字母大键盘的向下键，方便向下选字然后回车即可，因为笔顺重码少，这样也够用了，单独输入时仍为+号。
+#    - {accept: KP_Comma, send: Up, when: has_menu}
+# # # 单手笔顺输入法用小键盘的“.”加号键映射为字母大键盘的向下键，方便向下选字然后回车即可，因为笔顺重码少，这样也够用了，单独输入时仍为+号。
+#    - {accept: KP_Decimal, send: Down, when: has_menu}
+
 punctuator:                # 句读处理器，
   import_preset: default   # 调用 default 默认的文件配置，能使用大键盘打出中文标点符号，字母依然是英文（再也不需要按 Shift 键切换中英文状态了）。
 
@@ -173,9 +200,3 @@ punctuator:                # 句读处理器，
 #  page_size: 10             # 候选字每页显示个数，最多10个，在default.custom.yaml文件有相同的设置，不要在此修改。
 
 #  alternative_select_keys: asdfghjkl  # 如果编码字符占用了数字键，那么可以另设选字键。（本来想用“+1、+2”这样的组合键来选字，可惜Rime不支持，我也不会写程序。退一步想，即使占用大键盘的字母键来选字，然后想用小键盘的按键来映射，也已经没有其它按键可以用了，Rime也无法在选字时映射小键盘的KP_Home之类按键映射为字母，所以用不上。小键盘的KP_Home之类按键以后可以设计为类似手机的9键字母输入，这样小键盘打拼音就更方便了。）
-
-### （开源）单手笔顺输入法码表 https://github.com/YQ-YSY/stroke-seq_MB
-### 悬浮栏功能设计说明图 https://github.com/YQ-YSY/stroke-seq_MB/blob/master/icon/Sample.jpg
-### 希望能有程序员，写出真正的“单手笔顺输入法”独立程序，实现不用按键切换的“拼音笔顺双输入、英文笔顺双输入”。
-### 如果能按“悬浮栏功能设计说明图”实现更多的功能，那就更好了，方便大众使用。
-

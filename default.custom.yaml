@@ -27,8 +27,9 @@ patch:
     - {schema: g6code}            # 六碼筆畫(香港)
     - {schema: stroke5_cn}        # 五碼筆順(大陸)
     - {schema: stroke5}           # 五碼筆畫(香港)
-    - {schema: t9}                # T9筆順(大陸)
-    - {schema: one_hand}          # 單手筆順輸入法(原作者字典, 改鍵盤輸入 + 12345)
+#    - {schema: t9}               # T9筆順(大陸)
+    - {schema: tnine}             # T9筆順(香港)
+    - {schema: one_hand}          # 單手筆順輸入法(原作者字典, 改鍵盤輸入)
 
   ###Ibus 自帶
     - {schema: luna_pinyin_tw}

@@ -1,10 +1,10 @@
 # rime_tyhgb_stroke
-fcitx + ibus 筆畫輸入法Linux版; 包含五碼, 六碼; 以及臺灣, 大陸筆畫, 基於Rime
+fcitx + ibus 筆畫輸入法Linux版; 包含五碼, 六碼, 全碼; 以及臺灣, 香港筆畫, 大陸筆畫; 基於Rime
 
 
 一. fcitx 安裝
 
-0x01. 輪入法基於fcitx-rime(中州韻), 如果系統未安裝, 請先下載安裝ibus-rime
+0x01. 輪入法基於fcitx-rime(中州韻), 如果系統未安裝, 請先下載安裝fcitx-rime
 
 	Ubuntu Studio: 
 
@@ -118,10 +118,8 @@ Ibus 自帶 (位於 /usr/share/rime-data/)
 丨	YUIOP
 丶	ASDFG
 丿	HJKL
-𠃌	ZXCVB
+乛	ZXCVB
 *?	NM
-
-註: NM 目前未處理
 
 四. 輸入法説明
 
@@ -155,11 +153,17 @@ Ibus 自帶 (位於 /usr/share/rime-data/)
 
 	鍵入方式: 按筆順順序輸入, 更多參考官方
 
-0X06. one_hand	-	單手筆順輸入法(原作者字典, 改鍵盤輸入 + 12345)
+0X06. one_hand	-	單手筆順輸入法(原作者字典, 改鍵盤輸入)
 	
 	字典基於: 单手笔顺输入法码表 stroke-seq_MB 2.0 版 https://github.com/YQ-YSY/stroke-seq_MB
 
 	鍵入方式: 本版俢改按筆順順序輸入, 原版請使用官方
+
+0X07. tnine	-	T9筆順(香港)
+	
+	字典基於: T9 / G6IME 筆劃輸入法 https://github.com/cyrus0880/rime-t9stroke
+
+	鍵入方式: 本版俢改按輸入鍵盤, 原版請使用官方
 
 大陸 和 臺灣 區別, 如:丁:
 
