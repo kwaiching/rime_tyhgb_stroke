@@ -1,10 +1,10 @@
 # By: kwaiching
-# 编码 utf-8 
+# 编码 utf-8
 # 使用 UNIX 换行符（LF）
 # 鉴于一些文本编辑器会为 UTF-8 编码的文件添加 BOM 标记，为了防止误将该字符混入文中， 不要从文件的第一行开始正文，而请在该行行首以 # 记号起一行注释
 
 ---
-name: tnine.extended
+name: tnine
 version: "2021.03.28"
 use_preset_vocabulary: ture       # 是否使用用户预设词汇
 sort: by_wight
@@ -14,4 +14,3 @@ import_tables:
     - tnine.g6tcf   # 全碼
 #    - tnine.enn
     - tnine.symbol
-
